@@ -1,0 +1,75 @@
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+
+                <br>
+                <p class=" text-info">{{UserCtrl.today | date : 'short'}} </p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+                <!--<div>-->
+
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User Name</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://placehold.it/" class="img-circle img-responsive"> </div>-->
+
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td>UserName</td>
+                                            <td><input type="text" ng-model="UserCtrl.userDetail.userName" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ZipCode:</td>
+                                            <td><input type="text" ng-model="UserCtrl.userDetail.zipCode" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Date of Birth</td>
+                                            <td><input type="text" ng-model="UserCtrl.userDetail.birthdate" /></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Password</td>
+                                            <td><input type="text" ng-model="UserCtrl.userDetail.password" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td><input type="text" ng-model="UserCtrl.userDetail.email" /></td>
+                                        </tr>
+                                        <td>Phone Number</td>
+                                        <td><input type="text" ng-model="UserCtrl.userDetail.phoneNumber" /></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <!--<li><a ui-sref="addproduct">Add products</a></li>-->
+                                <row>
+                                    <button type="button" class="btn btn-primary" ng-click="UserCtrl.updateInfo(UserCtrl.userDetail)"> Update Profile Information </button>
+                                    <button type="button" class="btn btn-success" ui-sref="addproduct">Add Product</button>
+                                    <button type="button" value="{{messages.userId}}" class="btn btn-warning" ng-click="UserCtrl.messageHistory()"> Retrieve Messages</button>
+                                </row>
+                                <!--<pre>{{UserCtrl.returnMessage | json}}</pre>-->
+                                <ul class="list-group" class="list-group-item" ng-repeat="message in UserCtrl.returnMessage">
+
+                                    <li>Message recieved: {{message.messageText}}</li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
